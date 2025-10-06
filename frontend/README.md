@@ -1,70 +1,159 @@
-# Getting Started with Create React App
+# Averix Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Production-ready React SPA for decentralized prop trading platform.
 
-## Available Scripts
+## 🚀 Quick Start
 
-In the project directory, you can run:
+### Prerequisites
+- Node.js 16+ 
+- npm or yarn
 
-### `npm start`
+### Local Development
+```bash
+# Install dependencies
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Start development server
+npm start
+# Opens http://localhost:3000
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Build for Production
+```bash
+# Create production build
+npm run build
 
-### `npm test`
+# Run bundle size check
+npm run lint
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📁 Project Structure
 
-### `npm run build`
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # Radix UI components
+│   ├── sections/       # Page sections (Hero, About, etc.)
+│   ├── Navbar.js       # Navigation component
+│   ├── Footer.js       # Footer with legal links
+│   ├── WalletModal.js  # Wallet connection modal
+│   └── ErrorBoundary.js # Error handling
+├── pages/              # Route components
+│   ├── Home.js         # Landing page
+│   ├── Whitepaper.js   # Whitepaper viewer
+│   ├── Auth.js         # Wallet connection
+│   ├── Dashboard.js    # User dashboard
+│   ├── Privacy.js      # Privacy policy
+│   ├── Terms.js        # Terms of service
+│   └── Disclaimer.js   # Risk disclaimer
+├── context/            # React context providers
+├── hooks/              # Custom React hooks
+└── lib/                # Utility functions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+public/
+├── favicon.svg         # App icon
+├── manifest.json       # PWA manifest
+├── sw.js              # Service worker
+├── _headers           # Security headers (Netlify)
+├── _redirects         # SPA fallback (Netlify)
+├── 404.html           # SPA fallback (GitHub Pages)
+├── sitemap.xml        # SEO sitemap
+├── robots.txt         # SEO robots
+└── whitepaper.pdf     # Whitepaper document
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🌐 Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Vercel (Recommended)
+1. Connect your GitHub repository to Vercel
+2. Deploy automatically on push to main branch
+3. Environment variables configured in Vercel dashboard
 
-### `npm run eject`
+### GitHub Pages
+1. Run `npm run build`
+2. Push `build/` folder to `gh-pages` branch
+3. Enable GitHub Pages in repository settings
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Netlify
+1. Connect repository to Netlify
+2. Build command: `npm run build`
+3. Publish directory: `build`
+4. Headers and redirects automatically applied
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔧 Environment Variables
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Create `.env` file in frontend root:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+# Backend API URL
+REACT_APP_BACKEND_URL=http://localhost:8000
 
-## Learn More
+# Optional: Analytics or other services
+REACT_APP_ANALYTICS_ID=your_analytics_id
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📱 PWA Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Offline Support**: Service worker caches critical assets
+- **Installable**: Add to home screen on mobile devices
+- **Manifest**: App metadata and icons configured
+- **Responsive**: Mobile-first design with Tailwind CSS
 
-### Code Splitting
+## 🔒 Security
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **CSP Headers**: Content Security Policy configured
+- **HTTPS**: Strict Transport Security enabled
+- **Frame Protection**: X-Frame-Options set to DENY
+- **No External Scripts**: All dependencies bundled locally
 
-### Analyzing the Bundle Size
+## ♿ Accessibility
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **WCAG AA Compliant**: Focus management and color contrast
+- **Reduced Motion**: Respects user motion preferences
+- **Semantic HTML**: Proper landmarks and headings
+- **Screen Reader**: ARIA labels and descriptions
 
-### Making a Progressive Web App
+## 📊 Performance
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Code Splitting**: Lazy-loaded routes reduce initial bundle
+- **Bundle Budget**: Automated size monitoring (350KB limit)
+- **Image Optimization**: SVG icons and optimized assets
+- **Caching**: Service worker for offline functionality
 
-### Advanced Configuration
+## 🛠️ Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- `npm start` - Development server
+- `npm run build` - Production build with bundle check
+- `npm test` - Run test suite
+- `npm run lint` - ESLint code analysis
+- `npm run postbuild` - Copy headers for deployment
 
-### Deployment
+## 📄 Legal Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- `/privacy` - Privacy Policy
+- `/terms` - Terms of Service  
+- `/disclaimer` - Risk Disclaimer
 
-### `npm run build` fails to minify
+All legal pages are linked in the footer and accessible via direct URLs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔗 External Links
+
+- **Whitepaper**: Download or view PDF
+- **Contact**: averix.found@gmail.com
+- **Telegram**: @averix_founder
+
+## 🐛 Troubleshooting
+
+### Build Issues
+- Clear `node_modules` and reinstall: `rm -rf node_modules && npm install`
+- Check Node.js version: `node --version` (requires 16+)
+
+### Deployment Issues
+- Verify environment variables are set
+- Check build output in `build/` directory
+- Review browser console for runtime errors
+
+### PWA Issues
+- Service worker only registers in production
+- Clear browser cache if manifest changes
+- Test offline functionality in production build

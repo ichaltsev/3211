@@ -14,7 +14,10 @@ const Whitepaper = () => {
   }, []);
 
   const handleDownload = () => {
-    window.open('https://customer-assets.emergentagent.com/job_b4f9138b-d805-4933-9217-0f17e5eccf05/artifacts/20f6ypbl_WhitePaper.html', '_blank');
+    const link = document.createElement('a');
+    link.href = '/whitepaper.pdf';
+    link.download = 'Averix_Whitepaper.pdf';
+    link.click();
   };
 
   const sections = [
@@ -80,11 +83,11 @@ const Whitepaper = () => {
             </Button>
             <Button 
               variant="outline" 
-              onClick={() => window.open('https://customer-assets.emergentagent.com/job_b4f9138b-d805-4933-9217-0f17e5eccf05/artifacts/20f6ypbl_WhitePaper.html', '_blank')}
+              onClick={() => window.open('/whitepaper.pdf', '_blank', 'noopener')}
               className="border-white/30 text-white hover:bg-white/10"
             >
               <ExternalLink className="h-4 w-4 mr-2" />
-              View Online
+              View PDF
             </Button>
           </div>
         </div>

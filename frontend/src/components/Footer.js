@@ -77,24 +77,24 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <button className="text-gray-300 hover:text-white transition-colors text-left">
+                <Link to="/terms" className="text-gray-300 hover:text-white transition-colors">
                   Terms of Service
-                </button>
+                </Link>
               </li>
               <li>
-                <button className="text-gray-300 hover:text-white transition-colors text-left">
+                <Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">
                   Privacy Policy
-                </button>
+                </Link>
               </li>
               <li>
-                <button className="text-gray-300 hover:text-white transition-colors text-left">
+                <Link to="/disclaimer" className="text-gray-300 hover:text-white transition-colors">
                   Risk Disclosure
-                </button>
+                </Link>
               </li>
               <li>
-                <button className="text-gray-300 hover:text-white transition-colors text-left">
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   Documentation
-                </button>
+                </a>
               </li>
             </ul>
           </div>

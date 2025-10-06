@@ -56,9 +56,13 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
+    "build": "craco build && node scripts/bundle-budget.cjs",
+    "postbuild": "cp public/_headers build/_headers || echo 'no headers'",
+    "test": "craco test",
+    "lint": "eslint src --ext .js,.jsx",
+    "typecheck": "echo 'TypeScript not configured'"
   },
+  "homepage": "https://ichaltsev.github.io/3211/",
   "browserslist": {
     "production": [
       ">0.2%",
